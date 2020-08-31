@@ -1,0 +1,30 @@
+<h3>
+    Welcome to TutorMatch<br>
+    <small>Easily create,manage and find the best tutors in the world</small>
+  </h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-8 offset-xl-3 offset-lg-3 offset-md-2">
+        <div class="button-section clearfix">
+          <a routerLink="change" class="btn btn-success float-right">New Tutor</a>
+        </div>
+
+        <h5>List of tutors</h5>
+        <div id="tutor-list">
+            <div class="list-group">
+              <div class="list-group-item" *ngFor="let info of tutorInformation; let ind=index;">
+                {{info.tutorName}}
+                <div class="clearfix float-right">
+                  <a [routerLink]="['change']" [queryParams]="{id:info.tutorID}">Update</a>
+                  <a [routerLink]="[]" (click)="deleteTutor(info.tutorID,info.tutorName,ind)">Delete</a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<app-alert-information *ngIf="showAlert" [message]="alertMessage"
+  [messageType]="alertType" (onClosed)="onAlertClosed($event)">
+</app-alert-information>

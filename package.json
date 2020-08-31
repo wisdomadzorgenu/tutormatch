@@ -1,0 +1,28 @@
+{
+   "name": "tutormatch",
+   "version": "1.0.0",
+   "description": "A tutor management system",
+   "main": "index.js",
+   "scripts": {
+      "test": "cd backend && npm test",
+      "start": "npm-run-all --parallel backend:start frontend:start launch",
+      "backend:start": "cd backend && npm start",
+      "frontend:start": "cd frontend && wait-on http-get://localhost:5500 && npm start",
+      "launch": "wait-on http-get://localhost:4200 && opener http://localhost:4200",
+      "install:backend":"cd backend && npm install",
+      "install:frontend":"cd frontend && npm install",
+      "postinstall": "npm-run-all --parallel install:backend install:frontend"
+   },
+   "keywords": [
+      "tutor",
+      "web",
+      "app"
+   ],
+   "author": "Wisdom Adzorgenu",
+   "license": "ISC",
+   "devDependencies": {
+      "npm-run-all": "^4.1.5",
+      "opener": "^1.5.2",
+      "wait-on": "^5.2.0"
+   }
+}

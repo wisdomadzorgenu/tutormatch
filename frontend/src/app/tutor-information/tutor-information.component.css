@@ -1,0 +1,17 @@
+h3 {
+  margin-top: 65px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h3 small {
+  font-size: 65%;
+}
+
+.list-group-item a {
+  padding-right: 10px;
+}
+
+.button-section {
+  margin-bottom: 20px;
+}

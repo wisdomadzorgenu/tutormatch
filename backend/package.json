@@ -1,0 +1,39 @@
+{
+  "name": "tutor-match-backend",
+  "version": "1.0.0",
+  "description": "tutor match is a startup that helps students find the best tutors.",
+  "main": "server.js",
+  "scripts": {
+     "start":"node server.js",
+     "test": "mocha test"
+  },
+  "keywords": [
+    "tutor",
+    "match",
+    "best",
+    "tutors",
+    "students"
+  ],
+  "author": "Wisdom Adzorgenu",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "lodash": "^4.17.19",
+    "moment": "^2.27.0",
+    "sequelize": "^5.21.7",
+    "sqlite3": "^4.1.1",
+    "umzug": "^2.3.0",
+    "uuid": "^8.3.0",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^8.1.2",
+    "supertest": "^4.0.2"
+  }
+}

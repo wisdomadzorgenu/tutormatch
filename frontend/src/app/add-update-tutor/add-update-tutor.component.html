@@ -1,0 +1,31 @@
+<h3 *ngIf="!tutorID" class="text-center">Create a new tutor</h3>
+<h3 *ngIf="tutorID"  class="text-center">Update tutor's information</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-8 offset-xl-3 offset-lg-3 offset-md-2">
+
+          <form #form="ngForm" (ngSubmit)="submitForm()">
+            <label for="tutorName">Enter name:</label>
+            <input type="text" class="form-control" required name="tutorName" id="tutorName"
+                    placeholder="enter name ..." [(ngModel)]="tutorName"
+                    pattern="^[A-Za-z0-9-.\s]+$" #tName="ngModel">
+            <span class="input-error" *ngIf="tName.touched && !tName.valid && isSubmitBtnClicked">
+              A valid name is required!
+            </span>
+
+            <div class="btn-section clearfix">
+              <a class="btn btn-secondary float-left" [routerLink]="['/']">Home</a>
+              <button type="submit" class="float-right btn btn-success"
+                      [disabled]="!form.valid">
+                  <ng-container *ngIf="tutorID">Update</ng-container>
+                  <ng-container *ngIf="!tutorID">Create</ng-container>
+              </button>
+            </div>
+          </form>
+    </div>
+  </div>
+</div>
+<app-alert-information *ngIf="showAlert" [message]="alertMessage"
+  [messageType]="alertType" (onClosed)="onAlertClosed($event)">
+</app-alert-information>
